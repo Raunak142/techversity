@@ -2,7 +2,6 @@ import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import OurPrograms from "@/components/home/OurPrograms";
-import Features from "@/components/home/Features";
 import HiringPartner from "@/components/home/HiringPartner";
 import WeServe from "@/components/home/WeServe";
 import OurStrengths from "@/components/home/OurStrengths";
@@ -33,7 +32,6 @@ export default function Home() {
         <WeServe />
         <OurStrengths />
         <Testimonials />
-        <Features />
         <FAQContact />
         <StudyAbroad />
         <StudentSupportSection />

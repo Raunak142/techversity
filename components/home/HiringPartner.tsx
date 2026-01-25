@@ -7,7 +7,7 @@ const partners = [
   },
   {
     name: "Gartner",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Gartner_logo.svg/2560px-Gartner_logo.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png",
   },
   {
     name: "Google",
@@ -15,7 +15,7 @@ const partners = [
   },
   {
     name: "Samsung",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png",
   },
   {
     name: "Tata",
@@ -35,7 +35,7 @@ const partners = [
   },
   {
     name: "Intel",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Intel-logo.svg/2560px-Intel-logo.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png",
   },
   {
     name: "Cisco",
