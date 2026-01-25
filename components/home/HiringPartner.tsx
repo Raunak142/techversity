@@ -45,8 +45,8 @@ const partners = [
 
 const HiringPartner = () => {
   return (
-    <section className="py-16 bg-white min-h-[40vh] flex flex-col justify-center overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-20 mb-14">
+    <section className="py-16 md:py-24 bg-white min-h-[40vh] flex flex-col justify-center overflow-hidden">
+      <div className="container mx-auto px-8 lg:px-32 mb-14">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <h2 className="text-2xl md:text-4xl font-bold text-black max-w-xl leading-tight text-center md:text-left">
             From Campus to Corporate – <br />

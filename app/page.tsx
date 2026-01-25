@@ -4,6 +4,13 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import OurPrograms from "@/components/home/OurPrograms";
 import Features from "@/components/home/Features";
 import HiringPartner from "@/components/home/HiringPartner";
+import WeServe from "@/components/home/WeServe";
+import OurStrengths from "@/components/home/OurStrengths";
+import Testimonials from "@/components/home/Testimonials";
+import StudyAbroad from "@/components/home/StudyAbroad";
+import StudentSupportSection from "@/components/home/StudentSupportSection";
+import FAQContact from "@/components/home/FAQContact";
+import CTASection from "@/components/home/CTASection";
 
 export default function Home() {
   return (
@@ -18,12 +25,19 @@ export default function Home() {
       />
 
       <div className="relative z-10">
-        <Hero />        
+        <Hero />
         <About />
         <WhyChooseUs />
         <OurPrograms />
         <HiringPartner />
+        <WeServe />
+        <OurStrengths />
+        <Testimonials />
         <Features />
+        <FAQContact />
+        <StudyAbroad />
+        <StudentSupportSection />
+        <CTASection />
       </div>
     </main>
   );

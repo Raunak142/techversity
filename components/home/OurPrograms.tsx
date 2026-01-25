@@ -124,9 +124,9 @@ const OurPrograms = () => {
 
   return (
     <section className="relative z-10 py-16 md:py-24 bg-[#0049AC]/40 overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-12 relative">
+      <div className="container mx-auto px-8 lg:px-32 relative">
         {/* Heading */}
-        <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4 lg:px-20">
+        <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
             Empowering Education. <br />
             Elevating Enterprises
@@ -211,7 +211,7 @@ const OurPrograms = () => {
         </div>
 
         {/* American Management University Programs Section */}
-        <div className="mt-24 px-4 lg:px-20">
+        <div className="mt-24">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center md:text-left">
             American Management University Programs
           </h2>
