@@ -32,9 +32,9 @@ export default function Home() {
         <WeServe />
         <OurStrengths />
         <Testimonials />
-        <FAQContact />
         <StudyAbroad />
         <StudentSupportSection />
+        <FAQContact />
         <CTASection />
       </div>
     </main>

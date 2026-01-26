@@ -2,19 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import {
-  Mail,
-  ArrowRight,
-  Facebook,
-  Linkedin,
-  Instagram,
-  X as XIcon, // Lucide's X is close icon, but can double as X logo or I can use custom SVG. I'll use generic X for now.
-  Menu,
-  X, // Close icon for menu
-} from "lucide-react";
+import { Mail, ArrowRight, Menu, X, ChevronDown } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProgramsOpen, setIsProgramsOpen] = useState(false);
 
   return (
     <header className="w-full font-sans shadow-md relative z-50">
@@ -55,51 +47,88 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-12 font-semibold text-gray-800">
-          {[
-            { name: "Home", path: "/" },
-            { name: "Programs", path: "/programs" },
-            { name: "Universities", path: "/universities" },
-            { name: "Contact", path: "/contact" },
-            { name: "Apply Now", path: "/apply" },
-          ].map((item) => (
-            <Link
-              key={item.name}
-              href={item.path}
-              className={`text-[15px] uppercase tracking-wide hover:text-[#003B95] transition-colors relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#003B95] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 ${item.name === "Apply Now" ? "text-[#003B95]" : ""}`}
+        <nav className="hidden lg:flex items-center gap-8 xl:gap-12 font-semibold text-gray-800 absolute left-1/2 transform -translate-x-1/2">
+          <Link
+            href="/"
+            className="text-[15px] uppercase tracking-wide hover:text-[#003B95] transition-colors relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#003B95] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+          >
+            Home
+          </Link>
+
+          <Link
+            href="/about-us"
+            className="text-[15px] uppercase tracking-wide hover:text-[#003B95] transition-colors relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#003B95] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+          >
+            About Us
+          </Link>
+
+          {/* Programs Dropdown */}
+          <div
+            className="relative group h-full flex items-center"
+            onMouseEnter={() => setIsProgramsOpen(true)}
+            onMouseLeave={() => setIsProgramsOpen(false)}
+          >
+            <button className="flex items-center gap-1 text-[15px] uppercase tracking-wide hover:text-[#003B95] transition-colors relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#003B95] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300">
+              Programs
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${isProgramsOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            {/* Dropdown Menu */}
+            <div
+              className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-200 origin-top-left ${
+                isProgramsOpen
+                  ? "opacity-100 transform scale-100 visible"
+                  : "opacity-0 transform scale-95 invisible"
+              }`}
             >
-              {item.name}
-            </Link>
-          ))}
+              <div className="py-2 flex flex-col items-start bg-white rounded-lg">
+                <Link
+                  href="/programs/honorary-doctorate"
+                  className="block w-full text-left px-4 py-3 text-[14px] normal-case tracking-normal text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                >
+                  Honorary Doctorate
+                </Link>
+                <Link
+                  href="/programs/dba"
+                  className="block w-full text-left px-4 py-3 text-[14px] normal-case tracking-normal text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                >
+                  DBA
+                </Link>
+                <Link
+                  href="/programs/phd-doctorate"
+                  className="block w-full text-left px-4 py-3 text-[14px] normal-case tracking-normal text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                >
+                  PhD / Doctorate
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <Link
+            href="/universities"
+            className="text-[15px] uppercase tracking-wide hover:text-[#003B95] transition-colors relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#003B95] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+          >
+            Universities
+          </Link>
+
+          <Link
+            href="/contact"
+            className="text-[15px] uppercase tracking-wide hover:text-[#003B95] transition-colors relative after:content-[''] after:absolute after:w-full after:h-0.5 after:bg-[#003B95] after:left-0 after:-bottom-1 after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
+          >
+            Contact
+          </Link>
         </nav>
 
-        {/* Social Icons */}
-        <div className="hidden lg:flex items-center gap-5 text-gray-700">
-          <a
-            href="#"
-            className="hover:text-[#1877F2] transition-colors transform hover:-translate-y-1 duration-300"
+        {/* Apply Now Button */}
+        <div className="hidden lg:block">
+          <Link
+            href="/contact"
+            className="px-6 py-2.5 bg-[#003B95] text-white text-[15px] font-bold uppercase tracking-wide rounded-md hover:bg-[#002a70] transition-colors shadow-md transform hover:-translate-y-0.5"
           >
-            <Facebook className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
-            className="hover:text-black transition-colors transform hover:-translate-y-1 duration-300"
-          >
-            <XIcon className="w-5 h-5" />
-          </a>{" "}
-          {/* X / Twitter */}
-          <a
-            href="#"
-            className="hover:text-[#0A66C2] transition-colors transform hover:-translate-y-1 duration-300"
-          >
-            <Linkedin className="w-5 h-5" />
-          </a>
-          <a
-            href="#"
-            className="hover:text-[#E4405F] transition-colors transform hover:-translate-y-1 duration-300"
-          >
-            <Instagram className="w-5 h-5" />
-          </a>
+            Apply Now
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -121,10 +150,11 @@ export default function Header() {
           <nav className="flex flex-col p-6 gap-4 font-semibold text-gray-800">
             {[
               { name: "Home", path: "/" },
+              { name: "About Us", path: "/about-us" },
               { name: "Programs", path: "/programs" },
               { name: "Universities", path: "/universities" },
               { name: "Contact", path: "/contact" },
-              { name: "Apply Now", path: "/apply" },
+              { name: "Apply Now", path: "/contact" },
             ].map((item) => (
               <Link
                 key={item.name}
@@ -135,12 +165,6 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <div className="flex gap-6 mt-4 justify-center pt-4 border-t">
-              <Facebook className="w-6 h-6 text-gray-600" />
-              <XIcon className="w-6 h-6 text-gray-600" />
-              <Linkedin className="w-6 h-6 text-gray-600" />
-              <Instagram className="w-6 h-6 text-gray-600" />
-            </div>
           </nav>
         </div>
       )}
