@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { ChevronDown, X } from "lucide-react";
 
 const faqs = [
@@ -84,28 +85,48 @@ const faqs = [
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [showAll, setShowAll] = useState(false);
+  const buttonRef = React.useRef<HTMLDivElement>(null);
+
+  const visibleFaqs = showAll ? faqs : faqs.slice(0, 7);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const handleToggleView = () => {
+    if (showAll) {
+      // If collapsing ("View Less"), wait for state update & DOM reflow, then scroll to button
+      setShowAll(false);
+      setTimeout(() => {
+        buttonRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 50);
+    } else {
+      setShowAll(true);
+    }
+  };
+
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section id="faq" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-8 lg:px-32">
         <div className="max-w-3xl mx-auto flex flex-col gap-12">
           {/* Header */}
           <div className="text-center">
             <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight mb-4">
-              Your Quick Guide to Answers
+              Frequently Asked Questions
             </h2>
             <p className="text-gray-600 text-lg">
-              Frequently asked questions about our programs and admissions.
+              Get answers to common questions about programs, admissions, and
+              working with Techversity.ai.
             </p>
           </div>
 
           {/* FAQ List */}
           <div className="flex flex-col gap-3">
-            {faqs.map((faq, index) => {
+            {visibleFaqs.map((faq, index) => {
               const isOpen = openIndex === index;
               return (
                 <div
@@ -163,6 +184,37 @@ const FAQSection = () => {
                 </div>
               );
             })}
+          </div>
+
+          {/* View More Button */}
+          <div
+            ref={buttonRef}
+            className="flex flex-col items-center gap-6 pt-4"
+          >
+            <button
+              onClick={handleToggleView}
+              className="px-8 py-3 bg-white border border-gray-300 rounded-full text-gray-700 font-medium hover:bg-gray-50 hover:border-gray-400 hover:text-black transition-all shadow-sm flex items-center gap-2"
+            >
+              {showAll ? "View Less" : "View More FAQs"}
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  showAll ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {/* Footer CTA - Only visible when showing all */}
+            {showAll && (
+              <Link
+                href="/contact"
+                className="text-[#0049AC] hover:text-[#003B95] font-semibold flex items-center gap-2 group transition-colors animate-in fade-in duration-300"
+              >
+                Still Have Questions? Contact Our Team
+                <span className="transform group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
+              </Link>
+            )}
           </div>
         </div>
       </div>

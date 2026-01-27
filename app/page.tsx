@@ -7,7 +7,7 @@ import OurStrengths from "@/components/home/OurStrengths";
 import Testimonials from "@/components/home/Testimonials";
 import StudyAbroad from "@/components/home/StudyAbroad";
 import StudentSupportSection from "@/components/home/StudentSupportSection";
-import CTASection from "@/components/home/CTASection";
+import FinalCTASection from "@/components/home/FinalCTASection";
 
 import HowItWorksSection from "@/components/home/HowItWorksSection";
 import WhyTechversitySection from "@/components/home/WhyTechversitySection";
@@ -34,14 +34,13 @@ export default function Home() {
         <WhyTechversitySection />
         <UniversityPartners />
         <FAQSection />
-        <About />
-        {/* <WeServe /> */}
-        <OurStrengths />
         <Testimonials />
-        <StudyAbroad />
-        <StudentSupportSection />
-
-        <CTASection />
+        {/* <About /> */}
+        {/* <WeServe /> */}
+        {/* <OurStrengths /> */}
+        {/* <StudyAbroad />
+        <StudentSupportSection /> */}
+        <FinalCTASection />
       </div>
     </main>
   );

@@ -1,21 +1,22 @@
 import {
   UniversitiesHero,
-  UniversityCardsSection,
+  UniversityProfilesSection,
   UniversityComparisonSection,
-  ImportantDisclosureSection,
+  UniversityPartnershipDisclosureSection,
   AccreditationNoticeSection,
-  FinalCTASection,
+  UniversityFinalCTASection,
 } from "@/components/universities";
 
 export default function UniversitiesPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       <UniversitiesHero />
-      <UniversityCardsSection />
+      <UniversityProfilesSection />
       <UniversityComparisonSection />
+
+      <UniversityPartnershipDisclosureSection />
       <AccreditationNoticeSection />
-      <ImportantDisclosureSection />
-      <FinalCTASection />
+      <UniversityFinalCTASection />
     </main>
   );
 }

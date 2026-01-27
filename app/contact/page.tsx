@@ -1,11 +1,17 @@
-import { Hero, ContactInfo, ContactForm } from "@/components/contact";
+import {
+  Hero,
+  ContactMethodsSection,
+  ApplicationFormSection,
+  PostApplicationInfoSection,
+} from "@/components/contact";
 
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-gray-50">
       <Hero />
-      <ContactInfo />
-      <ContactForm />
+      <ApplicationFormSection />
+      <ContactMethodsSection />
+      <PostApplicationInfoSection />
     </main>
   );
 }

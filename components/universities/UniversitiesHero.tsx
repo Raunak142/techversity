@@ -15,7 +15,7 @@ export default function UniversitiesHero() {
           }}
         />
         {/* Dark Overlay for readability */}
-        <div className="absolute inset-0 bg-black/60 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-black/60 bg-linear-to-r from-black/80 via-black/50 to-transparent" />
       </div>
 
       {/* Content */}
@@ -38,9 +38,10 @@ export default function UniversitiesHero() {
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-gray-200 leading-relaxed font-light mb-8 max-w-2xl mx-auto md:mx-0">
-            Explore globally recognized universities partnered with
-            Techversity.ai, offering flexible, industry-relevant doctoral
-            programs for professionals worldwide.
+            Techversity.ai has established partnerships with accredited
+            universities offering flexible, recognized programs for ambitious
+            professionals worldwide. Each institution maintains its own academic
+            standards, accreditation, and program offerings.
           </p>
         </motion.div>
       </div>
