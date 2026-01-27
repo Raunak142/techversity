@@ -49,32 +49,32 @@ const Footer = () => {
                 <h3 className="text-xl font-bold text-white">About Us</h3>
               </div>
               <p className="text-white/90 text-sm leading-relaxed max-w-sm">
-                HNtrix is a forward-thinking organization dedicated to bridging
-                the gap between quality education and innovative enterprise
-                solutions.
+                Techversity is a forward-thinking organization dedicated to
+                bridging the gap between quality education and innovative
+                enterprise solutions.
               </p>
               <div className="flex items-center gap-4 mt-2">
                 <a
                   href="#"
-                  className="bg-white rounded-full p-2 hover:bg-gray-200 transition-colors group"
+                  className="bg-white rounded-full p-2 hover:bg-gray-200 transition-all duration-300 hover:-translate-y-1 group"
                 >
                   <Facebook className="w-5 h-5 text-[#0049AC]" />
                 </a>
                 <a
                   href="#"
-                  className="bg-white rounded-full p-2 hover:bg-gray-200 transition-colors group"
+                  className="bg-white rounded-full p-2 hover:bg-gray-200 transition-all duration-300 hover:-translate-y-1 group"
                 >
                   <Linkedin className="w-5 h-5 text-[#0049AC]" />
                 </a>
                 <a
                   href="#"
-                  className="bg-white rounded-full p-2 hover:bg-gray-200 transition-colors group"
+                  className="bg-white rounded-full p-2 hover:bg-gray-200 transition-all duration-300 hover:-translate-y-1 group"
                 >
                   <Instagram className="w-5 h-5 text-[#0049AC]" />
                 </a>
                 <a
                   href="#"
-                  className="bg-white rounded-full p-2 hover:bg-gray-200 transition-colors group"
+                  className="bg-white rounded-full p-2 hover:bg-gray-200 transition-all duration-300 hover:-translate-y-1 group"
                 >
                   <XIcon className="w-5 h-5 text-[#0049AC]" />
                 </a>
@@ -112,29 +112,38 @@ const Footer = () => {
                   <div className="flex flex-col gap-1">
                     <p>
                       For Sales Enquiry:{" "}
-                      <a href="mailto:sales@hntrix.com" className="font-bold">
-                        sales@hntrix.com
+                      <a
+                        href="mailto:info@techversity.ai"
+                        className="font-bold"
+                      >
+                        info@techversity.ai
                       </a>
                     </p>
                     <p>
                       For Support Enquiry:{" "}
-                      <a href="mailto:support@hntrix.com" className="font-bold">
-                        support@hntrix.com
+                      <a
+                        href="mailto:info@techversity.ai"
+                        className="font-bold"
+                      >
+                        info@techversity.ai
                       </a>
                     </p>
                     <p>
                       For Admission Enquiry:{" "}
                       <a
-                        href="mailto:admissions@hntrix.com"
+                        href="mailto:info@techversity.ai"
                         className="font-bold"
                       >
-                        admissions@hntrix.com
+                        info@techversity.ai
                       </a>
                     </p>
                     <p>
                       For Legal:{" "}
-                      <a href="mailto:legal@hntrix.com" className="font-bold">
-                        legal@hntrix.com
+                      <a
+                        href="mailto:info@techversity.ai"
+                        className="font-bold"
+                      >
+                        info@techversity.ai
                       </a>
                     </p>
                   </div>
@@ -163,7 +172,7 @@ const Footer = () => {
       {/* Copyright Bar */}
       <div className="bg-[#242B30] py-6 text-center border-t border-white/10">
         <p className="text-white/80 text-sm font-medium">
-          © 2026 HNtrix PVT LTD . Your Gateway to Global Recognition.
+          © 2026 Techversity PVT LTD . Your Gateway to Global Recognition.
         </p>
       </div>
     </footer>

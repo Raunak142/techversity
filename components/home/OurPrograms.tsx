@@ -7,52 +7,55 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 // Data
 const originalPrograms = [
   {
-    title: "Fasttrack Mode Doctorate",
+    title: "Honorary Doctorate",
     description:
-      "Earn your doctorate faster with HNtrix and stay ahead in your professional journey.",
+      "Gain global recognition for your professional achievements and industry expertise.",
+    details: [
+      "Timeline: 4-8 weeks",
+      "Ideal for: Established leaders & experts",
+      "Format: Recognition-based",
+    ],
     image:
       "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     link: "/programs/fasttrack-doctorate",
+    cta: "Learn More",
   },
   {
-    title: "Master Programs",
+    title: "Doctor of Business Administration (DBA)",
     description:
-      "HNtrix offers globally recognized Master’s programs designed to accelerate career growth.",
+      "Earn a research-focused doctoral degree designed for senior executives and business leaders.",
+    details: [
+      "Timeline: 18-36 months",
+      "Ideal for: C-suite & senior leaders",
+      "Format: Online & flexible",
+    ],
     image:
       "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     link: "/programs/masters",
+    cta: "Learn More",
   },
   {
-    title: "Regular Doctorate",
+    title: " PhD / Doctorate Programs",
     description:
-      "This program blends rigorous research with real-world relevance, helping you gain academic distinction.",
+      "Pursue rigorous academic research in your field with internationally recognized universities.",
+    details: [
+      "Timeline: 24-48 months",
+      "Ideal for: Academics & researchers",
+      "Format: Research-based",
+    ],
     image:
       "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     link: "/programs/doctorate",
+    cta: "Learn More",
   },
   {
-    title: "Honorary Doctorate",
+    title: "Master's Programs",
     description:
-      "Recognizing outstanding achievements and contributions to society with our prestigious honorary doctorate programs.",
+      "Coming Soon Expand your expertise with specialized master's degrees across business, technology, and more.",
     image:
       "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    link: "/programs/honorary",
-  },
-  {
-    title: "Bachelor Programs",
-    description:
-      "Build a strong foundation for your career with our comprehensive and industry-aligned bachelor degree programs.",
-    image:
-      "https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    link: "/programs/bachelors",
-  },
-  {
-    title: "Online MBA",
-    description:
-      "Master business administration with our flexible online MBA, designed for working professionals.",
-    image:
-      "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    link: "/programs/mba",
+    link: "/programs/masters",
+    cta: "Learn More",
   },
 ];
 
@@ -128,16 +131,15 @@ const OurPrograms = () => {
         {/* Heading */}
         <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-            Empowering Education. <br />
-            Elevating Enterprises
+            Explore Our Programs
           </h2>
-          <p className="text-white text-lg md:text-right hidden md:block max-w-lg ml-auto">
-            Discover our diverse range of competitive programs designed to
-            propel your career and academic standing to new heights.
+          <p className="text-white text-lg md:text-left hidden md:block max-w-lg ml-auto ">
+            Select the qualification that aligns with your professional goals
+            and aspirations.
           </p>
           <p className="text-white text-base md:hidden">
-            Discover our diverse range of competitive programs designed to
-            propel your career and academic standing to new heights.
+            Select the qualification that aligns with your professional goals
+            and aspirations.
           </p>
         </div>
 
@@ -174,15 +176,24 @@ const OurPrograms = () => {
                     <h3 className="text-xl font-bold text-black mb-4 group-hover:text-[#003B95] transition-colors">
                       {program.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-6 grow leading-relaxed">
+                    <p className="text-gray-600 text-sm mb-4 grow leading-relaxed">
                       {program.description}
                     </p>
+
+                    {/* Optional Details */}
+                    {program.details && (
+                      <div className="text-gray-600 text-sm mb-6 space-y-2">
+                        {program.details.map((detail, idx) => (
+                          <p key={idx}>● {detail}</p>
+                        ))}
+                      </div>
+                    )}
 
                     <Link
                       href={program.link}
                       className="inline-flex items-center gap-2 text-black font-bold text-sm uppercase tracking-wider group-hover:gap-3 transition-all mt-auto"
                     >
-                      Read more{" "}
+                      {program.cta || "Read more"}{" "}
                       <ArrowRight className="w-5 h-5 text-[#003B95]" />
                     </Link>
                   </div>
@@ -228,17 +239,22 @@ const OurPrograms = () => {
               </div>
               <div className="p-8 flex flex-col grow">
                 <h3 className="text-xl font-bold text-black mb-4 group-hover:text-[#003B95] transition-colors">
-                  Honorary Doctorate Program
+                  Honorary Doctorate
                 </h3>
-                <p className="text-gray-600 text-sm mb-6 grow leading-relaxed">
-                  An honorary doctorate recognizes exceptional contributions,
-                  celebrating achievement without academic requirements.
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  Gain global recognition for your professional achievements and
+                  industry expertise.
                 </p>
+                <div className="text-gray-600 text-sm mb-6 grow space-y-2">
+                  <p>● Timeline: 4-8 weeks</p>
+                  <p>● Ideal for: Established leaders & experts</p>
+                  <p>● Format: Recognition-based</p>
+                </div>
                 <Link
                   href="/programs/amu-honorary"
                   className="inline-flex items-center gap-2 text-black font-bold text-sm uppercase tracking-wider group-hover:gap-3 transition-all mt-auto"
                 >
-                  Read more <ArrowRight className="w-5 h-5 text-[#003B95]" />
+                  Learn More <ArrowRight className="w-5 h-5 text-[#003B95]" />
                 </Link>
               </div>
             </div>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, ArrowRight, Menu, X, ChevronDown } from "lucide-react";
 
 export default function Header() {
@@ -15,10 +16,10 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <Mail className="w-4 h-4" />
           <a
-            href="mailto:support@hntrix.com"
+            href="mailto:info@techversity.ai"
             className="hover:text-gray-200 transition-colors"
           >
-            support@hntrix.com
+            info@techversity.ai
           </a>
         </div>
         <Link
@@ -32,17 +33,19 @@ export default function Header() {
       {/* Main Navigation */}
       <div className="bg-white px-4 md:px-8 lg:px-16 h-20 flex justify-between items-center relative z-50">
         {/* Logo */}
-        <Link href="/" className="flex flex-col leading-none group">
-          <div className="flex items-center italic">
-            <span className="text-4xl font-black text-black tracking-tighter transform -skew-x-6">
-              H
-            </span>
-            <span className="text-4xl font-black text-[#003B95] tracking-tighter transform -skew-x-6">
-              N
-            </span>
-          </div>
-          <span className="text-[10px] font-bold text-gray-400 tracking-[0.2em] transform -skew-x-6 group-hover:text-[#003B95] transition-colors">
-            HNTRIX
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/images/Logo.png"
+            alt="Techversity"
+            width={60}
+            height={60}
+            className="h-20 w-auto object-contain"
+            priority
+            unoptimized
+          />
+          <span className="text-lg md:text-xl font-bold bg-linear-to-r from-[#0049AC] to-[#9C4486] bg-clip-text text-transparent tracking-tight">
+            TECHVERSITY.AI
           </span>
         </Link>
 

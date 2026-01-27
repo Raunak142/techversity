@@ -15,7 +15,7 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
-
+      
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 w-full flex flex-col items-center justify-center h-full mt-10">
         {/* Heading */}

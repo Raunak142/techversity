@@ -73,17 +73,17 @@ export default function Nomination() {
             Contact & Support
           </h2>
           <p className="text-gray-600 font-bold mb-6">
-            HNtrix — AMU Facilitation
+            Techversity — AMU Facilitation
           </p>
 
           <div className="space-y-2 text-gray-600 mb-8">
             <p>
               <span className="font-medium text-gray-500">Email:</span>{" "}
               <a
-                href="mailto:admissions@hntrix.com"
+                href="mailto:info@techversity.ai"
                 className="text-blue-600 hover:underline"
               >
-                admissions@hntrix.com
+                info@techversity.ai
               </a>
             </p>
             <p>
@@ -93,12 +93,12 @@ export default function Nomination() {
           </div>
 
           <div className="flex items-start">
-            {/* HNtrix Logo Placeholder from screenshot */}
+            {/* Logo Placeholder */}
             <div className="w-16 h-12 relative">
               {/* Replace with actual logo component or image */}
               <span className="font-black text-2xl italic tracking-tighter">
-                <span className="text-black">H</span>
-                <span className="text-[#0088cc]">N</span>
+                <span className="text-black">T</span>
+                <span className="text-[#0088cc]">V</span>
               </span>
             </div>
           </div>

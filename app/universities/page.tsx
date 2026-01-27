@@ -2,6 +2,9 @@ import {
   UniversitiesHero,
   UniversityCardsSection,
   UniversityComparisonSection,
+  ImportantDisclosureSection,
+  AccreditationNoticeSection,
+  FinalCTASection,
 } from "@/components/universities";
 
 export default function UniversitiesPage() {
@@ -10,6 +13,9 @@ export default function UniversitiesPage() {
       <UniversitiesHero />
       <UniversityCardsSection />
       <UniversityComparisonSection />
+      <AccreditationNoticeSection />
+      <ImportantDisclosureSection />
+      <FinalCTASection />
     </main>
   );
 }

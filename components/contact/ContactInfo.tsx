@@ -8,10 +8,10 @@ export default function ContactInfo() {
       icon: Mail,
       title: "Email",
       content: [
-        { label: "Sales", value: "sales@hntrix.com" },
-        { label: "Support", value: "support@hntrix.com" },
-        { label: "Admission", value: "admissions@hntrix.com" },
-        { label: "Legal", value: "legal@hntrix.com" },
+        { label: "Sales", value: "info@techversity.ai" },
+        { label: "Support", value: "info@techversity.ai" },
+        { label: "Admission", value: "info@techversity.ai" },
+        { label: "Legal", value: "info@techversity.ai" },
       ],
     },
     {
@@ -28,12 +28,13 @@ export default function ContactInfo() {
       content: [
         {
           label: "UK",
-          value: "HNtrix Limited , 14 Harrow Place, London, England, E1 7DB",
+          value:
+            "Techversity Limited , 14 Harrow Place, London, England, E1 7DB",
         },
         {
           label: "India",
           value:
-            "HNtrix Limited , A, LGF, K-38, Kashmiri Lal Dhingra Marg, Block H, Kalkaji, New Delhi, Delhi 110019",
+            "Techversity Limited , A, LGF, K-38, Kashmiri Lal Dhingra Marg, Block H, Kalkaji, New Delhi, Delhi 110019",
         },
       ],
     },
