@@ -21,6 +21,7 @@ export default function TermsConditionsPage() {
               Last Updated: January 2025
             </p>
           </div>
+          
 
           {/* Content Sections */}
           <div className="space-y-12 text-gray-700 leading-relaxed md:text-lg">
