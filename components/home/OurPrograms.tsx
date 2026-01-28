@@ -43,7 +43,7 @@ const originalPrograms = [
       "Ideal for: Academics & researchers",
       "Format: Research-based",
     ],
-    image: "/images/Phdcard.png",
+    image: "/images/PHDcard.png",
     link: "/programs/phd-doctorate",
     cta: "Learn More",
     disabled: false,
