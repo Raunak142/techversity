@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import SiteFooter from "../components/SiteFooter";
+import WhatsAppButton from "../components/ui/WhatsAppButton";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Header />
         {children}
         <SiteFooter />
+        <WhatsAppButton />
       </body>
     </html>
   );

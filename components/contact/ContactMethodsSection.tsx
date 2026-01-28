@@ -222,15 +222,21 @@ export default function ContactMethodsSection() {
 
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                "General FAQs",
-                "Honorary Doctorate FAQs",
-                "DBA Program FAQs",
-                "PhD Program FAQs",
-                "University Information",
-              ].map((text, i) => (
-                <Link href="/faqs" key={i}>
+                { text: "General FAQs", href: "/#faq" },
+                {
+                  text: "Honorary Doctorate FAQs",
+                  href: "/programs/honorary-doctorate#faq",
+                },
+                { text: "DBA Program FAQs", href: "/programs/dba#faq" },
+                {
+                  text: "PhD Program FAQs",
+                  href: "/programs/phd-doctorate#faq",
+                },
+                { text: "University Information", href: "/universities" },
+              ].map((item, i) => (
+                <Link href={item.href} key={i}>
                   <button className="px-5 py-2.5 bg-white border border-gray-200 text-gray-700 font-medium rounded-full hover:border-[#0049AC] hover:text-[#0049AC] hover:bg-blue-50 transition-all text-sm flex items-center gap-2">
-                    {text} <ArrowRight className="w-3 h-3" />
+                    {item.text} <ArrowRight className="w-3 h-3" />
                   </button>
                 </Link>
               ))}
@@ -302,10 +308,13 @@ export default function ContactMethodsSection() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              { text: "Browse All Programs", href: "/programs" },
+              { text: "Browse All Programs", href: "/#programs" },
               { text: "View University Partners", href: "/universities" },
-              { text: "Read Application Process", href: "/admissions" },
-              { text: "Apply Directly", href: "/apply" },
+              {
+                text: "Read Application Process",
+                href: "/programs/honorary-doctorate#admission",
+              },
+              { text: "Apply Directly", href: "/contact#application-form" },
             ].map((link, i) => (
               <Link href={link.href} key={i}>
                 <span className="inline-block px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 rounded-lg text-sm font-semibold transition-all cursor-pointer">

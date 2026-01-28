@@ -12,7 +12,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
           style={{
-            backgroundImage: "url('/images/pagebgImage.png')",
+            backgroundImage: "url('/images/phd.jpg')",
           }}
         />
         {/* Dark Overlay for readability */}
@@ -55,7 +55,7 @@ export default function Hero() {
             className="flex justify-center md:justify-start"
           >
             <Link
-              href="/apply"
+              href="/contact"
               className="px-8 py-4 bg-[#0049AC] hover:bg-[#003B95] text-white font-bold rounded-full transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Apply Now

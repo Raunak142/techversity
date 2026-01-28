@@ -64,10 +64,15 @@ const FinalCTASection = () => {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
             >
-              <button className="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-full transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <a
+                href="https://wa.me/919540287212?text=Hello!%20I%20would%20like%20to%20know%20more%20about%20Techversity%20programs."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-8 py-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-full transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
                 <MessageCircle className="w-5 h-5" />
                 WhatsApp Us
-              </button>
+              </a>
               <button className="w-full sm:w-auto px-8 py-4 border-2 border-gray-200 hover:border-[#0049AC] hover:text-[#0049AC] text-gray-600 font-bold rounded-full transition-all flex items-center justify-center gap-2 bg-transparent">
                 <Calendar className="w-5 h-5" />
                 Book Consultation

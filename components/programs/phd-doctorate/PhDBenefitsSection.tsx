@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 import {
   Award,
   BookOpen,
@@ -90,6 +91,34 @@ export default function PhDBenefitsSection() {
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        {/* Featured Image Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative h-[200px] md:h-[280px] w-full rounded-2xl overflow-hidden mb-12 shadow-xl"
+        >
+          <Image
+            src="https://images.pexels.com/photos/159844/pexels-photo-159844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="Open books and academic research materials representing scholarly pursuit"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0049AC]/80 to-[#0049AC]/40" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center text-white px-4">
+              <p className="text-xl md:text-2xl font-bold mb-2">
+                Advance Human Knowledge
+              </p>
+              <p className="text-sm md:text-base opacity-90">
+                Make your mark in academia and research
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

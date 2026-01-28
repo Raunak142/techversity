@@ -181,7 +181,7 @@ const HowItWorksSection = () => {
           className="mt-20 text-center"
         >
           <Link
-            href="/apply"
+            href="/contact"
             className="inline-flex items-center gap-3 px-8 py-4 bg-[#0049AC] text-white rounded-full font-bold text-lg hover:bg-[#003B95] hover:shadow-lg hover:scale-105 transition-all duration-300 group"
           >
             Ready to Get Started? Apply Now

@@ -3,7 +3,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, ArrowRight, Menu, X, ChevronDown } from "lucide-react";
+import {
+  Mail,
+  ArrowRight,
+  Menu,
+  X,
+  ChevronDown,
+  Calendar,
+  Award,
+  Briefcase,
+  GraduationCap,
+} from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,33 +88,108 @@ export default function Header() {
               />
             </button>
 
-            {/* Dropdown Menu */}
+            {/* Premium Dropdown Menu */}
             <div
-              className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-200 origin-top-left ${
+              className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[420px] bg-white rounded-2xl shadow-2xl ring-1 ring-gray-100 transition-all duration-300 origin-top ${
                 isProgramsOpen
-                  ? "opacity-100 transform scale-100 visible"
-                  : "opacity-0 transform scale-95 invisible"
+                  ? "opacity-100 transform scale-100 translate-y-0 visible"
+                  : "opacity-0 transform scale-95 -translate-y-2 invisible"
               }`}
             >
-              <div className="py-2 flex flex-col items-start bg-white rounded-lg">
-                <Link
-                  href="/programs/honorary-doctorate"
-                  className="block w-full text-left px-4 py-3 text-[14px] normal-case tracking-normal text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-                >
-                  Honorary Doctorate
-                </Link>
-                <Link
-                  href="/programs/dba"
-                  className="block w-full text-left px-4 py-3 text-[14px] normal-case tracking-normal text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-                >
-                  DBA
-                </Link>
-                <Link
-                  href="/programs/phd-doctorate"
-                  className="block w-full text-left px-4 py-3 text-[14px] normal-case tracking-normal text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-                >
-                  PhD / Doctorate
-                </Link>
+              {/* Dropdown Arrow */}
+              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 border-l border-t border-gray-100" />
+
+              <div className="p-4 relative">
+                {/* Header */}
+                <div className="px-2 pb-3 mb-3 border-b border-gray-100">
+                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                    Our Programs
+                  </p>
+                </div>
+
+                {/* Program Links */}
+                <div className="space-y-1">
+                  <Link
+                    href="/programs/honorary-doctorate"
+                    onClick={() => setIsProgramsOpen(false)}
+                    className="group/item flex items-start gap-4 p-3 rounded-xl hover:bg-linear-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200"
+                  >
+                    <div className="shrink-0 w-12 h-12 rounded-xl bg-linear-to-br from-[#0049AC] to-[#6366f1] flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover/item:scale-110 transition-transform duration-200">
+                      <Award className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <h4 className="text-[15px] font-semibold text-gray-900 group-hover/item:text-[#0049AC] transition-colors">
+                          Honorary Doctorate
+                        </h4>
+                        <span className="px-2 py-0.5 text-[10px] font-bold uppercase bg-amber-100 text-amber-700 rounded-full">
+                          4-8 Weeks
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">
+                        Recognition for distinguished professionals
+                      </p>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-gray-300 group-hover/item:text-[#0049AC] group-hover/item:translate-x-1 transition-all mt-1" />
+                  </Link>
+
+                  <Link
+                    href="/programs/dba"
+                    onClick={() => setIsProgramsOpen(false)}
+                    className="group/item flex items-start gap-4 p-3 rounded-xl hover:bg-linear-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200"
+                  >
+                    <div className="shrink-0 w-12 h-12 rounded-xl bg-linear-to-br from-[#0049AC] to-[#0ea5e9] flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover/item:scale-110 transition-transform duration-200">
+                      <Briefcase className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <h4 className="text-[15px] font-semibold text-gray-900 group-hover/item:text-[#0049AC] transition-colors">
+                          Doctor of Business Administration
+                        </h4>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">
+                        For senior executives & business leaders
+                      </p>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-gray-300 group-hover/item:text-[#0049AC] group-hover/item:translate-x-1 transition-all mt-1" />
+                  </Link>
+
+                  <Link
+                    href="/programs/phd-doctorate"
+                    onClick={() => setIsProgramsOpen(false)}
+                    className="group/item flex items-start gap-4 p-3 rounded-xl hover:bg-linear-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-200"
+                  >
+                    <div className="shrink-0 w-12 h-12 rounded-xl bg-linear-to-br from-[#0049AC] to-[#8b5cf6] flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover/item:scale-110 transition-transform duration-200">
+                      <GraduationCap className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <h4 className="text-[15px] font-semibold text-gray-900 group-hover/item:text-[#0049AC] transition-colors">
+                          PhD / Doctorate
+                        </h4>
+                        <span className="px-2 py-0.5 text-[10px] font-bold uppercase bg-green-100 text-green-700 rounded-full">
+                          Research
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">
+                        Advanced research & academic excellence
+                      </p>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-gray-300 group-hover/item:text-[#0049AC] group-hover/item:translate-x-1 transition-all mt-1" />
+                  </Link>
+                </div>
+
+                {/* Footer CTA */}
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsProgramsOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full py-2.5 bg-linear-to-r from-[#0049AC] to-[#003B95] text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-200"
+                  >
+                    Not sure? Get a Free Consultation
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -124,13 +209,14 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Apply Now Button */}
+        {/* Book a Call Button */}
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="px-6 py-2.5 bg-[#003B95] text-white text-[15px] font-bold uppercase tracking-wide rounded-md hover:bg-[#002a70] transition-colors shadow-md transform hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#003B95] text-white text-[15px] font-bold uppercase tracking-wide rounded-md hover:bg-[#002a70] transition-colors shadow-md transform hover:-translate-y-0.5"
           >
-            Apply Now
+            <Calendar className="w-4 h-4" />
+            Book a Call
           </Link>
         </div>
 
@@ -157,7 +243,7 @@ export default function Header() {
               { name: "Programs", path: "/programs" },
               { name: "Universities", path: "/universities" },
               { name: "Contact", path: "/contact" },
-              { name: "Apply Now", path: "/contact" },
+              { name: "Book a Call", path: "/contact" },
             ].map((item) => (
               <Link
                 key={item.name}

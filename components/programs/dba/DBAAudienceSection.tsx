@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -86,6 +87,34 @@ export default function DBAAudienceSection() {
   return (
     <section className="py-20 lg:py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        {/* Featured Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative h-[200px] md:h-[260px] w-full rounded-2xl overflow-hidden mb-12 shadow-xl"
+        >
+          <Image
+            src="/images/dbaSection.png"
+            alt="Business professionals discussing strategy in a modern office"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0049AC]/70 to-transparent" />
+          <div className="absolute inset-0 flex items-center px-8 md:px-12">
+            <div className="text-white max-w-lg">
+              <p className="text-xl md:text-2xl font-bold mb-2">
+                For Ambitious Leaders
+              </p>
+              <p className="text-sm md:text-base opacity-90">
+                Ready to blend practice with research excellence
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -155,7 +184,7 @@ export default function DBAAudienceSection() {
                 transition={{ duration: 0.4, delay: 0.1 * index }}
                 className="flex items-center gap-2 px-5 py-3 bg-gray-50 rounded-full border border-gray-200"
               >
-                <CheckCircle className="w-5 h-5 text-[#0049AC] flex-shrink-0" />
+                <CheckCircle className="w-5 h-5 text-[#0049AC] shrink-0" />
                 <span className="text-gray-700 font-medium text-sm">
                   {requirement}
                 </span>

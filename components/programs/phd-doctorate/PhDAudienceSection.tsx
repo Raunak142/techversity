@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 import {
   GraduationCap,
   Microscope,
@@ -52,7 +53,7 @@ const candidates = [
 ];
 
 const requirements = [
-  "Master’s degree in a relevant field",
+  "Master's degree in a relevant field",
   "Strong academic record",
   "Research proposal",
   "Academic references",
@@ -86,6 +87,34 @@ export default function PhDAudienceSection() {
   return (
     <section className="py-20 lg:py-28 bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        {/* Featured Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative h-[200px] md:h-[260px] w-full rounded-2xl overflow-hidden mb-12 shadow-xl"
+        >
+          <Image
+            src="/images/image17.png"
+            alt="Researcher working on academic materials in a library setting"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0049AC]/70 to-transparent" />
+          <div className="absolute inset-0 flex items-center px-8 md:px-12">
+            <div className="text-white max-w-lg">
+              <p className="text-xl md:text-2xl font-bold mb-2">
+                For Future Scholars
+              </p>
+              <p className="text-sm md:text-base opacity-90">
+                Committed to advancing knowledge through research
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

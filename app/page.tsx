@@ -1,12 +1,7 @@
 import Hero from "@/components/home/Hero";
-import About from "@/components/home/About";
 import OurPrograms from "@/components/home/OurPrograms";
 import TrustPartnersSection from "@/components/home/TrustPartnersSection";
-import WeServe from "@/components/home/WeServe";
-import OurStrengths from "@/components/home/OurStrengths";
 import Testimonials from "@/components/home/Testimonials";
-import StudyAbroad from "@/components/home/StudyAbroad";
-import StudentSupportSection from "@/components/home/StudentSupportSection";
 import FinalCTASection from "@/components/home/FinalCTASection";
 
 import HowItWorksSection from "@/components/home/HowItWorksSection";
@@ -35,11 +30,6 @@ export default function Home() {
         <UniversityPartners />
         <FAQSection />
         <Testimonials />
-        {/* <About /> */}
-        {/* <WeServe /> */}
-        {/* <OurStrengths /> */}
-        {/* <StudyAbroad />
-        <StudentSupportSection /> */}
         <FinalCTASection />
       </div>
     </main>

@@ -63,7 +63,10 @@ export default function ApplicationFormSection() {
   }
 
   return (
-    <section className="py-20 bg-gray-50 border-t border-gray-100">
+    <section
+      id="application-form"
+      className="py-20 bg-gray-50 border-t border-gray-100"
+    >
       <div className="max-w-5xl mx-auto px-4 lg:px-8">
         {/* Intro */}
         {/* Intro */}

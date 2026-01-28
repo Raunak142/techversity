@@ -72,7 +72,7 @@ const HonoraryDoctorateFinalCTASection: React.FC = () => {
               className="w-full sm:w-auto"
             >
               <Link
-                href="/apply"
+                href="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#0049AC] hover:bg-[#003B95] text-white font-bold rounded-full transition-all shadow-lg hover:shadow-xl"
               >
                 Apply Now

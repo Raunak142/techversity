@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import Image from "next/image";
 import {
   Award,
   BarChart3,
@@ -83,6 +84,34 @@ export default function DBABenefitsSection() {
   return (
     <section className="py-20 lg:py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        {/* Featured Image Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative h-[200px] md:h-[280px] w-full rounded-2xl overflow-hidden mb-12 shadow-xl"
+        >
+          <Image
+            src="/images/image10.png"
+            alt="Professionals celebrating success and career growth"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0049AC]/80 to-[#0049AC]/40" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center text-white px-4">
+              <p className="text-xl md:text-2xl font-bold mb-2">
+                Transform Your Career
+              </p>
+              <p className="text-sm md:text-base opacity-90">
+                Unlock new opportunities with a DBA degree
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -13,7 +13,6 @@ export default function UniversitiesPage() {
       <UniversitiesHero />
       <UniversityProfilesSection />
       <UniversityComparisonSection />
-
       <UniversityPartnershipDisclosureSection />
       <AccreditationNoticeSection />
       <UniversityFinalCTASection />

@@ -1,9 +1,5 @@
 import {
   Hero,
-  Overview,
-  KeyFeatures,
-  Process,
-  ContactForm,
   PhDIntroSection,
   PhDAudienceSection,
   PhDBenefitsSection,

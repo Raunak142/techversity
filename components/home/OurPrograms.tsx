@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Ban } from "lucide-react";
 
 // Data
 const originalPrograms = [
@@ -15,10 +15,10 @@ const originalPrograms = [
       "Ideal for: Established leaders & experts",
       "Format: Recognition-based",
     ],
-    image:
-      "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    link: "/programs/fasttrack-doctorate",
+    image: "/images/Doctratecard.png",
+    link: "/programs/honorary-doctorate",
     cta: "Learn More",
+    disabled: false,
   },
   {
     title: "Doctor of Business Administration (DBA)",
@@ -29,13 +29,13 @@ const originalPrograms = [
       "Ideal for: C-suite & senior leaders",
       "Format: Online & flexible",
     ],
-    image:
-      "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    link: "/programs/masters",
+    image: "/images/DBAcard.png",
+    link: "/programs/dba",
     cta: "Learn More",
+    disabled: false,
   },
   {
-    title: " PhD / Doctorate Programs",
+    title: "PhD / Doctorate Programs",
     description:
       "Pursue rigorous academic research in your field with internationally recognized universities.",
     details: [
@@ -43,19 +43,19 @@ const originalPrograms = [
       "Ideal for: Academics & researchers",
       "Format: Research-based",
     ],
-    image:
-      "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    link: "/programs/doctorate",
+    image: "/images/Phdcard.png",
+    link: "/programs/phd-doctorate",
     cta: "Learn More",
+    disabled: false,
   },
   {
     title: "Master's Programs",
     description:
-      "Coming Soon Expand your expertise with specialized master's degrees across business, technology, and more.",
-    image:
-      "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    link: "/programs/masters",
-    cta: "Learn More",
+      "Coming Soon! Expand your expertise with specialized master's degrees across business, technology, and more.",
+    image: "/images/Mastercard.png",
+    link: "#",
+    cta: "Coming Soon",
+    disabled: true,
   },
 ];
 
@@ -126,7 +126,10 @@ const OurPrograms = () => {
   // Desktop: 33.333%
 
   return (
-    <section className="relative z-10 py-16 md:py-24 bg-[#0049AC]/40 overflow-hidden">
+    <section
+      id="programs"
+      className="relative z-10 py-16 md:py-24 bg-[#0049AC]/40 overflow-hidden"
+    >
       <div className="container mx-auto px-8 lg:px-32 relative">
         {/* Heading */}
         <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -160,44 +163,79 @@ const OurPrograms = () => {
                 key={index}
                 className="shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 py-4"
               >
-                <div className="bg-white rounded-none shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col h-full border-b-4 border-transparent hover:border-[#003B95] group transform hover:-translate-y-3">
-                  {/* Image */}
-                  <div className="h-56 w-full overflow-hidden relative">
-                    <img
-                      src={program.image}
-                      alt={program.title}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-8 flex flex-col grow">
-                    <h3 className="text-xl font-bold text-black mb-4 group-hover:text-[#003B95] transition-colors">
-                      {program.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4 grow leading-relaxed">
-                      {program.description}
-                    </p>
-
-                    {/* Optional Details */}
-                    {program.details && (
-                      <div className="text-gray-600 text-sm mb-6 space-y-2">
-                        {program.details.map((detail, idx) => (
-                          <p key={idx}>● {detail}</p>
-                        ))}
+                {program.disabled ? (
+                  // Non-clickable card for disabled programs (Master's Program)
+                  <div className="bg-white rounded-none shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col h-full border-b-4 border-transparent hover:border-gray-400 group transform hover:-translate-y-3 cursor-not-allowed relative">
+                    {/* Image */}
+                    <div className="h-56 w-full overflow-hidden relative">
+                      <img
+                        src={program.image}
+                        alt={program.title}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 grayscale group-hover:grayscale-0"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                      {/* Coming Soon Badge */}
+                      <div className="absolute top-4 right-4 bg-gray-800/90 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                        Coming Soon
                       </div>
-                    )}
+                    </div>
 
-                    <Link
-                      href={program.link}
-                      className="inline-flex items-center gap-2 text-black font-bold text-sm uppercase tracking-wider group-hover:gap-3 transition-all mt-auto"
-                    >
-                      {program.cta || "Read more"}{" "}
-                      <ArrowRight className="w-5 h-5 text-[#003B95]" />
-                    </Link>
+                    {/* Content */}
+                    <div className="p-8 flex flex-col grow">
+                      <h3 className="text-xl font-bold text-black mb-4 group-hover:text-gray-600 transition-colors">
+                        {program.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-4 grow leading-relaxed">
+                        {program.description}
+                      </p>
+
+                      {/* Non-clickable indicator */}
+                      <div className="inline-flex items-center gap-2 text-gray-500 font-bold text-sm uppercase tracking-wider mt-auto">
+                        {program.cta || "Coming Soon"}{" "}
+                        <Ban className="w-5 h-5 text-gray-400 group-hover:text-red-500 transition-colors" />
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  // Clickable card for active programs
+                  <Link href={program.link} className="block h-full">
+                    <div className="bg-white rounded-none shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col h-full border-b-4 border-transparent hover:border-[#003B95] group transform hover:-translate-y-3 cursor-pointer">
+                      {/* Image */}
+                      <div className="h-56 w-full overflow-hidden relative">
+                        <img
+                          src={program.image}
+                          alt={program.title}
+                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="p-8 flex flex-col grow">
+                        <h3 className="text-xl font-bold text-black mb-4 group-hover:text-[#003B95] transition-colors">
+                          {program.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm mb-4 grow leading-relaxed">
+                          {program.description}
+                        </p>
+
+                        {/* Optional Details */}
+                        {program.details && (
+                          <div className="text-gray-600 text-sm mb-6 space-y-2">
+                            {program.details.map((detail, idx) => (
+                              <p key={idx}>● {detail}</p>
+                            ))}
+                          </div>
+                        )}
+
+                        <span className="inline-flex items-center gap-2 text-black font-bold text-sm uppercase tracking-wider group-hover:gap-3 transition-all mt-auto">
+                          {program.cta || "Read more"}{" "}
+                          <ArrowRight className="w-5 h-5 text-[#003B95]" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                )}
               </div>
             ))}
           </div>

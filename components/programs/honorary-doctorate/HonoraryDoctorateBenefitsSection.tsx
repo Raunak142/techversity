@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Award,
@@ -88,8 +89,36 @@ const itemVariants = {
 
 const HonoraryDoctorateBenefitsSection: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#0049AC]/5 via-white to-purple-50">
+    <section className="py-16 md:py-24 bg-linear-to-br from-[#0049AC]/5 via-white to-purple-50">
       <div className="container mx-auto px-4 lg:px-8 max-w-6xl">
+        {/* Featured Image Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative h-[200px] md:h-[280px] w-full rounded-2xl overflow-hidden mb-12 shadow-xl"
+        >
+          <Image
+            src="/images/passout.png"
+            alt="Distinguished professional receiving academic recognition"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0049AC]/80 to-[#0049AC]/40" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center text-white px-4">
+              <p className="text-xl md:text-2xl font-bold mb-2">
+                Recognition You Deserve
+              </p>
+              <p className="text-sm md:text-base opacity-90">
+                Formalize your legacy with academic honor
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -94,7 +94,7 @@ const PhDFAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section id="faq" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto flex flex-col gap-12">
           {/* Header */}

@@ -99,7 +99,7 @@ const itemVariants = {
 
 const HonoraryDoctorateAdmissionProcessSection: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section id="admission" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
         {/* Section Header */}
         <motion.div

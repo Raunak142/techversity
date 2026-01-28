@@ -1,9 +1,5 @@
 import {
   Hero,
-  Overview,
-  DegreeAwarded,
-  WhyChoose,
-  Faculty,
   DBAIntroSection,
   DBAAudienceSection,
   DBABenefitsSection,

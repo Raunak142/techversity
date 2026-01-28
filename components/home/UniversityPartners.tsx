@@ -105,68 +105,68 @@ const UniversityPartners = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
         >
           {universities.map((uni, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="bg-white rounded-none shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-b-4 border-transparent hover:border-[#0049AC] flex flex-col h-full"
-            >
-              {/* Image Area */}
-              <div className="h-48 overflow-hidden relative">
-                <img
-                  src={uni.image}
-                  alt={uni.name}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+            <Link key={index} href="/universities" className="block h-full">
+              <motion.div
+                variants={itemVariants}
+                className="bg-white rounded-none shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-b-4 border-transparent hover:border-[#0049AC] flex flex-col h-full cursor-pointer"
+              >
+                {/* Image Area */}
+                <div className="h-48 overflow-hidden relative">
+                  <img
+                    src={uni.image}
+                    alt={uni.name}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
 
-                {/* Location Badge */}
-                <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1.5 text-xs text-white">
-                  <MapPin className="w-3 h-3" />
-                  {uni.location}
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-6 flex flex-col grow">
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#0049AC] transition-colors leading-snug">
-                  {uni.name}
-                </h3>
-
-                <a
-                  href={`https://${uni.website}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-blue-600 mb-4 flex items-center gap-1 hover:underline"
-                >
-                  <Globe className="w-3 h-3" />
-                  {uni.website}
-                </a>
-
-                <div className="border-t border-gray-100 pt-4 mb-6 grow">
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-                    Available Programs:
-                  </p>
-                  <ul className="space-y-1.5">
-                    {uni.programs.map((program, idx) => (
-                      <li
-                        key={idx}
-                        className="text-sm text-gray-700 flex items-start gap-2"
-                      >
-                        <span className="text-[#0049AC] mt-1">●</span> {program}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Location Badge */}
+                  <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1.5 text-xs text-white">
+                    <MapPin className="w-3 h-3" />
+                    {uni.location}
+                  </div>
                 </div>
 
-                <Link
-                  href={uni.link}
-                  target="_blank"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-gray-900 uppercase tracking-wider group-hover:text-[#0049AC] group-hover:gap-3 transition-all mt-auto self-start"
-                >
-                  View Programs <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </motion.div>
+                {/* Content */}
+                <div className="p-6 flex flex-col grow">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#0049AC] transition-colors leading-snug">
+                    {uni.name}
+                  </h3>
+
+                  <span
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      window.open(`https://${uni.website}`, "_blank");
+                    }}
+                    className="text-xs text-blue-600 mb-4 flex items-center gap-1 hover:underline cursor-pointer"
+                  >
+                    <Globe className="w-3 h-3" />
+                    {uni.website}
+                  </span>
+
+                  <div className="border-t border-gray-100 pt-4 mb-6 grow">
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                      Available Programs:
+                    </p>
+                    <ul className="space-y-1.5">
+                      {uni.programs.map((program, idx) => (
+                        <li
+                          key={idx}
+                          className="text-sm text-gray-700 flex items-start gap-2"
+                        >
+                          <span className="text-[#0049AC] mt-1">●</span>{" "}
+                          {program}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <span className="inline-flex items-center gap-2 text-sm font-bold text-gray-900 uppercase tracking-wider group-hover:text-[#0049AC] group-hover:gap-3 transition-all mt-auto self-start">
+                    Learn More <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
 
@@ -194,9 +194,14 @@ const UniversityPartners = () => {
           </Link>
           <p className="mt-4 text-white text-sm">
             or{" "}
-            <Link href="/contact" className="underline hover:text-blue-100">
+            <a
+              href="https://wa.me/919540287212?text=Hello!%20I%20would%20like%20to%20speak%20to%20an%20admissions%20expert."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-blue-100"
+            >
               Speak to an Admissions Expert
-            </Link>
+            </a>
           </p>
         </motion.div>
       </div>

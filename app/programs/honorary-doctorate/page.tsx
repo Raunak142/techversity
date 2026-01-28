@@ -1,10 +1,5 @@
 import {
   Hero,
-  SubHero,
-  About,
-  Accreditations,
-  ProgramDetails,
-  Nomination,
   HonoraryDoctorateIntroSection,
   HonoraryDoctorateAudienceSection,
   HonoraryDoctorateBenefitsSection,

@@ -11,7 +11,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
           style={{
-            backgroundImage: "url('/images/pagebgImage.png')", // Placeholder - user should update
+            backgroundImage: "url('/images/image16.png')", // Placeholder - user should update
             backgroundColor: "#111",
           }}
         />
