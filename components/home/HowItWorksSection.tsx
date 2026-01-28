@@ -88,7 +88,13 @@ const lineVariants = {
 
 const HowItWorksSection = () => {
   return (
-    <section className="relative py-20 lg:py-32 bg-gray-50 overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="relative py-20 lg:py-32 bg-gray-50 overflow-hidden"
+    >
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <motion.div
@@ -189,7 +195,7 @@ const HowItWorksSection = () => {
           </Link>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

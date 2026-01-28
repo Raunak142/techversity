@@ -1,10 +1,17 @@
 import React from "react";
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const CTASection = () => {
   return (
-    <section className="w-full bg-[#0049AC]/10 py-24 md:py-32 px-4 md:px-8 relative overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="w-full bg-[#0049AC]/10 py-24 md:py-32 px-4 md:px-8 relative overflow-hidden"
+    >
       {/* Decorative Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
 
@@ -32,7 +39,7 @@ const CTASection = () => {
           </Link>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

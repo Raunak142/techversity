@@ -28,7 +28,13 @@ const FinalCTASection = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-28 bg-white overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="relative py-20 lg:py-28 bg-white overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-30 pointer-events-none">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
@@ -223,7 +229,7 @@ const FinalCTASection = () => {
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

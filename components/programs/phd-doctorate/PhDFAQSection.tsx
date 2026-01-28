@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, X } from "lucide-react";
+import { ChevronDown, X, Plus, Minus } from "lucide-react";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -94,7 +95,14 @@ const PhDFAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-16 md:py-24 bg-gray-50">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      id="faq"
+      className="py-16 md:py-24 bg-gray-50"
+    >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-3xl mx-auto flex flex-col gap-12">
           {/* Header */}
@@ -201,7 +209,7 @@ const PhDFAQSection: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

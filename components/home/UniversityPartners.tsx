@@ -65,7 +65,13 @@ const itemVariants = {
 
 const UniversityPartners = () => {
   return (
-    <section className="relative py-20 lg:py-32 bg-[#003B95]/50 overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="relative py-20 lg:py-32 bg-[#003B95]/50 overflow-hidden"
+    >
       {/* Decorative Background - slightly different from OurPrograms */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-blue-900/20 mix-blend-overlay"></div>
@@ -205,7 +211,7 @@ const UniversityPartners = () => {
           </p>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

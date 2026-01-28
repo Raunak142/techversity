@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import SiteFooter from "../components/SiteFooter";
 import WhatsAppButton from "../components/ui/WhatsAppButton";
+import LoaderWrapper from "../components/ui/LoaderWrapper";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -26,10 +27,12 @@ export default function RootLayout({
         className="font-sans antialiased bg-gray-50"
         suppressHydrationWarning
       >
-        <Header />
-        {children}
-        <SiteFooter />
-        <WhatsAppButton />
+        <LoaderWrapper>
+          <Header />
+          {children}
+          <SiteFooter />
+          <WhatsAppButton />
+        </LoaderWrapper>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { BarChart3, Presentation, Crown } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Values() {
   const values = [
@@ -29,7 +30,13 @@ export default function Values() {
   ];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 bg-gray-50">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 bg-gray-50"
+    >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-12">
         {values.map((item, index) => (
           <div
@@ -72,6 +79,6 @@ export default function Values() {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -31,7 +31,13 @@ export default function Partnering() {
   ];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 bg-white">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 bg-white"
+    >
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-10 border-b border-gray-100 pb-12">
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 max-w-2xl leading-tight tracking-tight">
@@ -101,6 +107,6 @@ export default function Partnering() {
           </AnimatePresence>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

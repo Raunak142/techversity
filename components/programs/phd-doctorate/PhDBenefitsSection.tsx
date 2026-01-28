@@ -100,7 +100,7 @@ export default function PhDBenefitsSection() {
           className="relative h-[200px] md:h-[280px] w-full rounded-2xl overflow-hidden mb-12 shadow-xl"
         >
           <Image
-            src="https://images.pexels.com/photos/159844/pexels-photo-159844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            src="/images/image3.png"
             alt="Open books and academic research materials representing scholarly pursuit"
             fill
             className="object-cover"

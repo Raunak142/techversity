@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { ArrowLeft, ArrowRight, Quote, Star } from "lucide-react";
+import { motion } from "framer-motion";
 
 // Data
 const testimonials = [
@@ -77,7 +78,13 @@ const Testimonials = () => {
   }, [currentIndex, isTransitioning]);
 
   return (
-    <section className="relative z-10 py-16 md:py-24 bg-[#0049AC]/90 overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="relative z-10 py-16 md:py-24 bg-[#0049AC]/90 overflow-hidden"
+    >
       {/* Background decoration (optional, inferred from 'pattern' in similar sections) */}
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
 
@@ -187,7 +194,7 @@ const Testimonials = () => {
           </button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

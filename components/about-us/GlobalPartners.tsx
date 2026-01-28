@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function GlobalPartners() {
   const partners = [
@@ -17,7 +18,13 @@ export default function GlobalPartners() {
   ];
 
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-white">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-white"
+    >
       <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
         Our Global Partners
       </h2>
@@ -52,6 +59,6 @@ export default function GlobalPartners() {
         Since I don't have the individual logo files, I've created the grid layout above.
         You can replace the text placeholders with your <Image /> components once you have the assets.
       */}
-    </section>
+    </motion.section>
   );
 }

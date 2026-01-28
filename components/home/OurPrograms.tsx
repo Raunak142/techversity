@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Ban } from "lucide-react";
+import { motion } from "framer-motion";
 
 // Data
 const originalPrograms = [
@@ -126,7 +127,11 @@ const OurPrograms = () => {
   // Desktop: 33.333%
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
       id="programs"
       className="relative z-10 py-16 md:py-24 bg-[#0049AC]/40 overflow-hidden"
     >
@@ -262,7 +267,7 @@ const OurPrograms = () => {
         {/* American Management University Programs Section */}
         {/* American Management University Programs Section Removed */}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

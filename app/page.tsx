@@ -17,7 +17,9 @@ export default function Home() {
         className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none opacity-50"
         style={{
           backgroundImage: "url('/images/pagebgImage.png')", // subtle pattern
-          backgroundRepeat: "repeat",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       />
 
